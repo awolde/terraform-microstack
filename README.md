@@ -106,7 +106,7 @@ resource "openstack_compute_instance_v2" "basic" {
 - Provision the vm: `$ terraform apply`
 - Check on the GUI if the vm is created.
 - Lets create three vms with a simple additional code:
-```bash
+```hcl
 resource "openstack_compute_instance_v2" "basic" {
   count           = 3
   name            = "new_vm_${count.index}"
