@@ -66,17 +66,17 @@ Openstack Ip address.
 - Create a new file inside this directory - `main.tf`
 - In `main.tf` use the following provider block to connect to your openstack cluster:
 ```hcl
-  provider "openstack" {
+provider "openstack" {
     user_name   = "admin"
     tenant_name = "admin"
-    password    = "hUJzmG8VTGAZJOO1SQ8RmTsEA8K7wcEl"
+    password    = "the-password-you-got-from-step-above"
     auth_url    = "https://192.168.1.111:5000/v3/"
     region      = "microstack"
     insecure    = true
 }
 ```
 - Add a vm creation block in the same `main.tf` file:
-```bash
+```hcl
 resource "openstack_compute_instance_v2" "basic" {
   name            = "new_vm"
   image_id        = "b7a26e18-3d0d-4f9d-b4bb-16fa1566b40f"
