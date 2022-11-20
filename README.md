@@ -123,3 +123,10 @@ resource "openstack_compute_instance_v2" "basic" {
 }
 ```
 - Cleanup all the vms we created: `$ terraform destroy`
+
+## Uploading more vm images
+```bash
+cd /var/snap/microstack/common/images/
+sudo wget http://cdimage.debian.org/cdimage/openstack/current-10/debian-10-openstack-amd64.qcow2
+microstack.openstack image create --container-format bare --disk-format qcow2 --file debian-10-openstack-amd64.qcow2 debian-10-openstack-amd64
+```

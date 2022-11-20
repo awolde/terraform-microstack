@@ -8,10 +8,11 @@ terraform {
   }
 }
 
+variable "password" {}
 provider "openstack" {
   user_name   = "admin"
   tenant_name = "admin"
-  password    = "Hb7fb6luwZo14S1UIwYkm7knfPTRYQXR"
+  password    = var.password
   auth_url    = "https://192.168.1.15:5000/v3/"
   region      = "microstack"
   insecure    = true
